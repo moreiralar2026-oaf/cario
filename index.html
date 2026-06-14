@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Estudos · Dentística Operatória</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app">
+
+        <!-- ===================== SIDEBAR / TOPBAR ===================== -->
+        <header class="topbar">
+            <div class="brand">
+                <span class="brand-icon">🦷</span>
+                <div>
+                    <h1>Dentística Operatória</h1>
+                    <p>Do isolamento à restauração final</p>
+                </div>
+            </div>
+
+            <nav class="tabs" id="tabs">
+                <button class="tab-btn active" data-tab="resumo">📋 Resumo</button>
+                <button class="tab-btn" data-tab="flashcards">🃏 Flashcards</button>
+                <button class="tab-btn" data-tab="questoes">📝 Questões</button>
+            </nav>
+        </header>
+
+        <!-- ===================== STATS STRIP ===================== -->
+        <section class="stats-strip">
+            <div class="stat-card">
+                <span class="stat-value" id="stat-flash">0</span>
+                <span class="stat-label">Flashcards revisados</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="stat-questoes">0/0</span>
+                <span class="stat-label">Questões respondidas</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="stat-acertos">0%</span>
+                <span class="stat-label">Taxa de acerto</span>
+            </div>
+            <div class="stat-card stat-reset">
+                <button id="reset-btn">🔄 Reiniciar progresso</button>
+            </div>
+        </section>
+
+        <main class="content">
+
+            <!-- ===================== RESUMO / GUIA ===================== -->
+            <section id="resumo" class="tab-panel active">
+                <div class="panel-header">
+                    <h2>Guia Mestre — Síntese de Alto Impacto</h2>
+                    <p>Conceitos essenciais consolidados para revisão rápida antes da prova.</p>
+                </div>
+
+                <div class="grid-cards">
+
+                    <div class="info-card">
+                        <h3>🧩 Classificação de Black &amp; Marzouk</h3>
+                        <table class="mini-table">
+                            <tr><td><strong>Classe I</strong></td><td>Sulcos, fissuras, fóssulas (inclui cíngulo/fóssula palatina de anteriores)</td></tr>
+                            <tr><td><strong>Classe II</strong></td><td>Proximais de pré-molares e molares</td></tr>
+                            <tr><td><strong>Classe III</strong></td><td>Proximais de anteriores, sem ângulo incisal</td></tr>
+                            <tr><td><strong>Classe IV</strong></td><td>Proximais de anteriores, com ângulo incisal</td></tr>
+                            <tr><td><strong>Classe V</strong></td><td>Terço cervical de qualquer dente</td></tr>
+                            <tr><td><strong>Classe VI</strong></td><td>Pontas de cúspide / bordas incisais (Marzouk)</td></tr>
+                        </table>
+                        <p class="alert-box">⚠️ Pegadinha: fóssula/cíngulo palatino de anterior = <strong>Classe I</strong>, nunca Classe III.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>📐 Paredes e Ângulos</h3>
+                        <ul class="bullet-list">
+                            <li><strong>Parede pulpar:</strong> perpendicular ao longo eixo (assoalho horizontal)</li>
+                            <li><strong>Parede axial:</strong> paralela ao longo eixo (caixas proximais/cervicais)</li>
+                            <li><strong>Ângulo diedro:</strong> encontro de 2 paredes</li>
+                            <li><strong>Ângulo triedro:</strong> encontro de 3 paredes</li>
+                            <li><strong>Ângulo cavossuperficial:</strong> define vedamento marginal e resistência do esmalte</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card highlight-card">
+                        <h3>⚖️ Amálgama vs. Resina Composta</h3>
+                        <table class="mini-table">
+                            <tr><th>Atributo</th><th>Amálgama</th><th>Resina</th></tr>
+                            <tr><td>Ângulo cavossuperficial</td><td>90° (reto)</td><td>~45° (biselado, estética)</td></tr>
+                            <tr><td>Ângulos internos</td><td>Nítidos / vivos</td><td>Arredondados</td></tr>
+                            <tr><td>Paredes</td><td>Convergentes p/ oclusal</td><td>Planas / expulsivas</td></tr>
+                            <tr><td>Retenção</td><td>Mecânica / friccional</td><td>Micromecânica (adesiva)</td></tr>
+                            <tr><td>Prof. mínima</td><td>1,5 – 2,0 mm</td><td>Conservadora</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>🦠 Fisiopatologia da Cárie</h3>
+                        <div class="flow-diagram">
+                            <span>Biofilme</span> →
+                            <span>Fermentação de carboidratos</span> →
+                            <span>Queda do pH</span> →
+                            <span class="flow-critical">pH crítico (Esmalte 5.5 / Dentina 6.2–6.7)</span> →
+                            <span>Desmineralização</span> →
+                            <span>Cavitação</span>
+                        </div>
+                        <p><strong>Lesão ativa:</strong> opaca, rugosa, amolecida &nbsp;|&nbsp; <strong>Lesão inativa:</strong> brilhante, lisa, pigmentada</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>🔒 Isolamento do Campo</h3>
+                        <ul class="bullet-list">
+                            <li><strong>Grampos 200-205:</strong> molares</li>
+                            <li><strong>Grampos 206-209:</strong> pré-molares</li>
+                            <li><strong>Grampo 212:</strong> retração cervical</li>
+                            <li><strong>Contraindicações:</strong> asma severa, alergia a látex, erupção incompleta</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>🛡️ Proteção Dentino-Pulpar (PCDP)</h3>
+                        <ul class="bullet-list">
+                            <li><strong>Rasa:</strong> selante</li>
+                            <li><strong>Média:</strong> base (CIV/ZOE) + selante</li>
+                            <li><strong>Profunda:</strong> hidróxido de cálcio + base + selante</li>
+                            <li><strong>Muito profunda:</strong> tratamento expectante — remoção parcial + selamento provisório por <strong>60 dias</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>🧪 Adesão e Resinas</h3>
+                        <ul class="bullet-list">
+                            <li><strong>Condicionamento ácido 37%:</strong> esmalte 30s / dentina 15s</li>
+                            <li><strong>4ª geração:</strong> 3 passos (ácido + primer + bond)</li>
+                            <li><strong>5ª geração:</strong> 2 passos (ácido + primer/bond único)</li>
+                            <li><strong>Nanopartículas:</strong> 5 a 100 nm</li>
+                            <li><strong>Maior inimigo da adesão:</strong> erro técnico operacional</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ===================== FLASHCARDS ===================== -->
+            <section id="flashcards" class="tab-panel">
+                <div class="panel-header">
+                    <h2>Flashcards de Revisão Rápida</h2>
+                    <p>Clique no cartão para virar. Use as setas ou os botões para navegar.</p>
+                </div>
+
+                <div class="flashcard-stage">
+                    <div class="flashcard-counter">
+                        <span id="flash-current">1</span> / <span id="flash-total">0</span>
+                    </div>
+                    <div class="flashcard" id="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-face flashcard-front" id="flash-front"></div>
+                            <div class="flashcard-face flashcard-back" id="flash-back"></div>
+                        </div>
+                    </div>
+                    <div class="flashcard-controls">
+                        <button id="flash-prev">⬅ Anterior</button>
+                        <button id="flash-flip">🔄 Virar</button>
+                        <button id="flash-next">Próximo ➡</button>
+                    </div>
+                    <div class="flashcard-jump" id="flash-jump"></div>
+                </div>
+            </section>
+
+            <!-- ===================== QUESTÕES ===================== -->
+            <section id="questoes" class="tab-panel">
+                <div class="panel-header">
+                    <h2>Questões Comentadas</h2>
+                    <p>Responda, confira o gabarito e leia a análise de cada alternativa.</p>
+                </div>
+
+                <div class="filter-bar" id="filter-bar">
+                    <button class="filter-btn active" data-filtro="todos">Todos</button>
+                </div>
+
+                <div class="questoes-container" id="questoes-container"></div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
